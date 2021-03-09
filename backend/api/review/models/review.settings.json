@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "reviews",
+  "info": {
+    "name": "Review"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "description": {
+      "type": "richtext"
+    },
+    "car": {
+      "model": "car",
+      "via": "reviews"
+    },
+    "author": {
+      "type": "email"
+    }
+  }
+}
