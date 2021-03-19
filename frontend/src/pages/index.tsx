@@ -2,7 +2,7 @@ import type { GetServerSideProps } from "next";
 
 import Button from "@material-ui/core/Button";
 import Input from "@material-ui/core/Input";
-import { makeStyles } from "@material-ui/core";
+import { createStyles, makeStyles } from "@material-ui/core";
 
 import { END_POINTS } from "constants/api";
 import buildBffUrl from "utils/buildBffUrl";
@@ -15,19 +15,42 @@ type Props = {
   cars: MinimalCar[];
 };
 
-const useStyles = makeStyles({
-  form: {
-    marginTop: "20px",
-    marginBottom: "100px",
-    display: "flex",
-    justifyContent: "center",
-  },
-  searchInput: {
-    fontSize: "30px",
-    height: "80px",
-    width: "60%",
-  },
-});
+const useStyles = makeStyles((theme) =>
+  createStyles({
+    form: {
+      marginTop: "20px",
+      marginBottom: "50px",
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "center",
+      [theme.breakpoints.up("sm")]: {
+        marginBottom: "100px",
+        justifyContent: "center",
+        flexDirection: "row",
+        alignItems: "stretch",
+      },
+    },
+    searchInput: {
+      fontSize: "30px",
+      height: "80px",
+      width: "90%",
+      marginBottom: "5px",
+      "& > input": {
+        textAlign: "center",
+      },
+      [theme.breakpoints.up("sm")]: {
+        marginBottom: "0",
+        width: "60%",
+      },
+    },
+    button: {
+      width: "90%",
+      [theme.breakpoints.up("sm")]: {
+        width: "auto",
+      },
+    },
+  })
+);
 
 const IndexPage = ({ cars = [] }: Props): JSX.Element => {
   const styles = useStyles();
@@ -59,7 +82,12 @@ const IndexPage = ({ cars = [] }: Props): JSX.Element => {
           value={value}
           onChange={handleOnChange}
         />
-        <Button type="submit" variant="contained" color="primary">
+        <Button
+          type="submit"
+          variant="contained"
+          color="primary"
+          className={styles.button}
+        >
           Search
         </Button>
       </form>
