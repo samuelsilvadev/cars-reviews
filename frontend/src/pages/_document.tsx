@@ -6,6 +6,7 @@ import Document, {
   DocumentContext,
   DocumentInitialProps,
 } from "next/document";
+import { ServerStyleSheets } from "@material-ui/styles";
 
 class CustomDocument extends Document {
   static async getInitialProps(
@@ -33,5 +34,28 @@ class CustomDocument extends Document {
     );
   }
 }
+
+CustomDocument.getInitialProps = async (context) => {
+  const styleSheets = new ServerStyleSheets();
+
+  const renderPageReference = context.renderPage;
+
+  context.renderPage = () =>
+    renderPageReference({
+      enhanceApp: (App) => (props) => styleSheets.collect(<App {...props} />),
+    });
+
+  const initialProps = await Document.getInitialProps(context);
+
+  return {
+    ...initialProps,
+    styles: [
+      <>
+        {initialProps.styles}
+        {styleSheets.getStyleElement()}
+      </>,
+    ],
+  };
+};
 
 export default CustomDocument;
