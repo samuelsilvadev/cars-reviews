@@ -29,9 +29,10 @@ const useStyles = makeStyles((theme) =>
         justifyContent: "space-between",
       },
     },
-    link: {
-      textDecoration: "none",
+    item: {
       margin: "12px",
+      height: "260px",
+      boxShadow: `0 10px 20px ${theme.palette.grey[200]}`,
       [theme.breakpoints.up("sm")]: {
         width: "calc(50% - (12px * 2))",
       },
@@ -39,8 +40,9 @@ const useStyles = makeStyles((theme) =>
         width: "calc(33% - (12px * 2))",
       },
     },
-    item: {
-      height: "300px",
+    link: {
+      textDecoration: "none",
+      cursor: "pointer",
       width: "100%",
       overflow: "hidden",
     },
@@ -49,6 +51,7 @@ const useStyles = makeStyles((theme) =>
       display: "flex",
       flexDirection: "column",
       paddingBottom: "24px",
+      boxShadow: "none",
       "& > :last-child": {
         paddingBottom: 0,
       },
@@ -69,16 +72,16 @@ const CarsList = ({ cars = [] }: Props): JSX.Element => {
       {cars.map((car) => {
         return (
           <Link href={`/car/${car.slug}`} key={car.id}>
-            <a className={styles.link}>
-              <li className={styles.item}>
+            <li className={styles.item}>
+              <a className={styles.link}>
                 <Card className={styles.itemCard}>
                   <CardHeader title={car.model} />
                   <CardContent className={styles.itemCardContent}>
                     {car.description}
                   </CardContent>
                 </Card>
-              </li>
-            </a>
+              </a>
+            </li>
           </Link>
         );
       })}
