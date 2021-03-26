@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import Button from "@material-ui/core/Button";
 import Input from "@material-ui/core/Input";
 import { createStyles, makeStyles } from "@material-ui/core";
@@ -54,6 +54,7 @@ const useStyles = makeStyles((theme) =>
 
 const IndexPage = ({ cars = [] }: Props): JSX.Element => {
   const styles = useStyles();
+  const searchInputRef = useRef<HTMLInputElement | undefined>();
 
   const [value, setValue] = useState<string>("");
   const [filteredCars, setFilteredCars] = useState<MinimalCar[]>(cars);
@@ -64,6 +65,12 @@ const IndexPage = ({ cars = [] }: Props): JSX.Element => {
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+
+    if (!value) {
+      searchInputRef.current?.focus();
+
+      return;
+    }
 
     const _filteredCars = cars.filter((car) => {
       return car.model.toLowerCase().startsWith(value.toLowerCase());
@@ -76,6 +83,7 @@ const IndexPage = ({ cars = [] }: Props): JSX.Element => {
     <>
       <form className={styles.form} onSubmit={handleSubmit}>
         <Input
+          inputRef={searchInputRef}
           placeholder="Type a car model"
           type="search"
           className={styles.searchInput}
