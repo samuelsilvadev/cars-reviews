@@ -1,15 +1,15 @@
-import type { GetServerSideProps } from "next";
-
+import React, { useState } from "react";
 import Button from "@material-ui/core/Button";
 import Input from "@material-ui/core/Input";
 import { createStyles, makeStyles } from "@material-ui/core";
+
+import type { GetServerSideProps } from "next";
 
 import { END_POINTS } from "constants/api";
 import buildBffUrl from "utils/buildBffUrl";
 import CarsList from "components/cars-list/CarsList";
 
 import type { MinimalCar } from "types/Car";
-import React, { useState } from "react";
 
 type Props = {
   cars: MinimalCar[];
