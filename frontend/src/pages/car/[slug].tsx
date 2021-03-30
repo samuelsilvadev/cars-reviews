@@ -4,6 +4,7 @@ import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 import { createStyles, makeStyles } from "@material-ui/core";
+import { useRouter } from "next/router";
 
 import type { GetServerSideProps } from "next";
 
@@ -74,8 +75,13 @@ function Car({ car }: Props): JSX.Element {
     createdAt,
   } = car;
 
+  const router = useRouter();
   const styles = useStyles();
   const createdAtDate = new Date(createdAt);
+
+  const handleOnCreateAReview = () => {
+    router.push("/create-review");
+  };
 
   return (
     <Container fixed>
@@ -118,7 +124,11 @@ function Car({ car }: Props): JSX.Element {
           <Typography variant="h6" component="p" className={styles.subtitle}>
             {description}
           </Typography>
-          <Button variant="outlined" color="primary">
+          <Button
+            variant="outlined"
+            color="primary"
+            onClick={handleOnCreateAReview}
+          >
             Write a review
           </Button>
         </div>
