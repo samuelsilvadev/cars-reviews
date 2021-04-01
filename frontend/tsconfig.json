@@ -22,7 +22,8 @@
       "utils/*": ["./src/utils/*"],
       "constants/*": ["./src/constants/*"],
       "types/*": ["./src/types/*"],
-      "components/*": ["./src/components/*"]
+      "components/*": ["./src/components/*"],
+      "hooks/*": ["./src/hooks/*"]
     }
   },
   "exclude": ["node_modules"],
