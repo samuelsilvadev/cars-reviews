@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Input from "@material-ui/core/Input";
 import InputLabel from "@material-ui/core/InputLabel";
 import Button from "@material-ui/core/Button";
@@ -7,6 +7,9 @@ import { createStyles, makeStyles } from "@material-ui/core";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
+import { useRouter } from "next/router";
+
+import useSaveReview from "hooks/reviews/useSaveReview";
 
 type ReviewForm = {
   review: string;
@@ -62,14 +65,29 @@ const schema = yup.object().shape({
 });
 
 function CreateReview(): JSX.Element {
+  const router = useRouter();
   const styles = useStyles();
-  const { register, errors, handleSubmit } = useForm<ReviewForm>({
+  const { register, errors, handleSubmit, reset } = useForm<ReviewForm>({
     resolver: yupResolver(schema),
   });
 
-  const onSubmit = (values: ReviewForm): void => {
-    console.log(values);
+  const [state, save] = useSaveReview();
+
+  const onSubmit = async (values: ReviewForm): Promise<void> => {
+    const { slug } = router.query;
+
+    if (typeof slug === "string") {
+      save({ ...values, slug });
+    }
+
+    // TODO: throw error message
   };
+
+  useEffect(() => {
+    if (state.created) {
+      reset();
+    }
+  }, [state.created]);
 
   return (
     <article className={styles.wrapper}>
@@ -114,6 +132,7 @@ function CreateReview(): JSX.Element {
           variant="outlined"
           color="primary"
           className={styles.button}
+          disabled={state.isLoading}
         >
           Save
         </Button>

@@ -80,7 +80,7 @@ function Car({ car }: Props): JSX.Element {
   const createdAtDate = new Date(createdAt);
 
   const handleOnCreateAReview = () => {
-    router.push("/create-review");
+    router.push(`/create-review/${router.query.slug}`);
   };
 
   return (
