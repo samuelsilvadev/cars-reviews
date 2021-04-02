@@ -23,13 +23,16 @@ function saveHandler(
   req: NextApiRequest,
   res: NextApiResponse
 ): void | Promise<void | undefined> {
-  const { author, review, slug } = JSON.parse(req.body);
-  const errors = errorsValidator(JSON.parse(req.body));
+  const parsedBody = JSON.parse(req.body);
+  const { author, review, slug } = parsedBody;
+  const errors = errorsValidator(parsedBody);
 
   if (Object.keys(errors).length > 0) {
-    return res
-      .status(400)
-      .json({ statusCode: 400, message: "Validation failed", meta: errors });
+    return res.status(400).json({
+      statusCode: 400,
+      message: "Validation failed",
+      meta: { errors },
+    });
   }
 
   return fetchCarBySlug(slug)

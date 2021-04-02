@@ -9,7 +9,7 @@ function reducer(state: State, action: Action): State {
   if (action.type === "START") {
     return {
       isLoading: true,
-      err: null,
+      err: undefined,
       created: undefined,
     };
   }
@@ -17,7 +17,7 @@ function reducer(state: State, action: Action): State {
   if (action.type === "DONE") {
     return {
       isLoading: false,
-      err: null,
+      err: undefined,
       created: true,
     };
   }
