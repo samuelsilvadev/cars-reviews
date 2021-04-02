@@ -66,14 +66,14 @@ const IndexPage = ({ cars = [] }: Props): JSX.Element => {
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    if (!value) {
+    if (!value.trim()) {
       searchInputRef.current?.focus();
-
+      setFilteredCars(cars);
       return;
     }
 
     const _filteredCars = cars.filter((car) => {
-      return car.model.toLowerCase().startsWith(value.toLowerCase());
+      return car.model.toLowerCase().includes(value.toLowerCase());
     });
 
     setFilteredCars(_filteredCars);
