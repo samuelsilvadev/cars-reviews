@@ -8,6 +8,8 @@ import { useRouter } from "next/router";
 
 import type { GetServerSideProps } from "next";
 
+import ReviewsList from "components/reviews-list/ReviewsList";
+
 import { END_POINTS } from "constants/api";
 import buildBffUrl from "utils/buildBffUrl";
 
@@ -21,6 +23,7 @@ const useStyles = makeStyles((theme) =>
   createStyles({
     header: {
       position: "relative",
+      marginBlockEnd: theme.spacing(6),
     },
     backLink: {
       position: "absolute",
@@ -133,6 +136,7 @@ function Car({ car }: Props): JSX.Element {
           </Button>
         </div>
       </header>
+      <ReviewsList reviews={reviews} />
     </Container>
   );
 }
