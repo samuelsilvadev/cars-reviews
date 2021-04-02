@@ -12,6 +12,8 @@ import { useRouter } from "next/router";
 
 import useSaveReview from "hooks/reviews/useSaveReview";
 
+import type { ErrorBody } from "hooks/reviews/types";
+
 type ReviewForm = {
   review: string;
   author: string;
@@ -57,7 +59,7 @@ const useStyles = makeStyles((theme) =>
     button: {
       alignSelf: "flex-end",
     },
-    alertSuccess: {
+    alert: {
       marginBottom: theme.spacing(2),
     },
   })
@@ -67,6 +69,32 @@ const schema = yup.object().shape({
   review: yup.string().min(10).required(),
   author: yup.string().email().required(),
 });
+
+const buildErrorAlerts = (err: ErrorBody, className?: string) => {
+  if (typeof err.meta == "undefined" || typeof err.meta.errors == "undefined") {
+    return [];
+  }
+
+  return Object.keys(err.meta.errors).map((field) => {
+    const [firstMessage] = err.meta?.errors?.[field] ?? [];
+
+    if (!firstMessage) {
+      return null;
+    }
+
+    return (
+      <Alert
+        key={field}
+        variant="outlined"
+        severity="error"
+        color="error"
+        className={className}
+      >
+        {firstMessage}
+      </Alert>
+    );
+  });
+};
 
 function CreateReview(): JSX.Element {
   const router = useRouter();
@@ -104,14 +132,11 @@ function CreateReview(): JSX.Element {
   return (
     <article className={styles.wrapper}>
       {state.created && !hideSuccessAlert && (
-        <Alert
-          variant="outlined"
-          severity="success"
-          className={styles.alertSuccess}
-        >
+        <Alert variant="outlined" severity="success" className={styles.alert}>
           Your review was posted successfully
         </Alert>
       )}
+      {state.err && buildErrorAlerts(state.err, styles.alert)}
       <Typography variant="h5" component="h1" className={styles.title}>
         Add Your Review
       </Typography>
