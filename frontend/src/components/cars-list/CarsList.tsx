@@ -26,7 +26,6 @@ const useStyles = makeStyles((theme) =>
       },
       [theme.breakpoints.up("lg")]: {
         maxWidth: "1000px",
-        justifyContent: "space-between",
       },
     },
     item: {
