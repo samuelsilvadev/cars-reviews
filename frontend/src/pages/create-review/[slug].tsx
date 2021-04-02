@@ -1,8 +1,9 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Input from "@material-ui/core/Input";
 import InputLabel from "@material-ui/core/InputLabel";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
+import Alert from "@material-ui/lab/Alert";
 import { createStyles, makeStyles } from "@material-ui/core";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -56,6 +57,9 @@ const useStyles = makeStyles((theme) =>
     button: {
       alignSelf: "flex-end",
     },
+    alertSuccess: {
+      marginBottom: theme.spacing(2),
+    },
   })
 );
 
@@ -70,18 +74,8 @@ function CreateReview(): JSX.Element {
   const { register, errors, handleSubmit, reset } = useForm<ReviewForm>({
     resolver: yupResolver(schema),
   });
-
   const [state, save] = useSaveReview();
-
-  const onSubmit = async (values: ReviewForm): Promise<void> => {
-    const { slug } = router.query;
-
-    if (typeof slug === "string") {
-      save({ ...values, slug });
-    }
-
-    // TODO: throw error message
-  };
+  const [hideSuccessAlert, setHideSuccessAlert] = useState(false);
 
   useEffect(() => {
     if (state.created) {
@@ -89,8 +83,35 @@ function CreateReview(): JSX.Element {
     }
   }, [state.created]);
 
+  useEffect(() => {
+    const timerId = window.setTimeout(() => {
+      setHideSuccessAlert(true);
+    }, 3000);
+
+    return () => {
+      window.clearTimeout(timerId);
+    };
+  }, [state.created]);
+
+  const onSubmit = async (values: ReviewForm): Promise<void> => {
+    const { slug: slugQuery } = router.query;
+    const slug = Array.isArray(slugQuery) ? slugQuery[0] : slugQuery;
+
+    save({ ...values, slug });
+    setHideSuccessAlert(false);
+  };
+
   return (
     <article className={styles.wrapper}>
+      {state.created && !hideSuccessAlert && (
+        <Alert
+          variant="outlined"
+          severity="success"
+          className={styles.alertSuccess}
+        >
+          Your review was posted successfully
+        </Alert>
+      )}
       <Typography variant="h5" component="h1" className={styles.title}>
         Add Your Review
       </Typography>
