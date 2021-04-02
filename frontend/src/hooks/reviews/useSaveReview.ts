@@ -3,7 +3,7 @@ import { useReducer } from "react";
 import { END_POINTS } from "constants/api";
 import buildBffUrl from "utils/buildBffUrl";
 
-import type { Body, State, Action } from "./types";
+import type { Body, State, Action, SaveReviewTuple } from "./types";
 
 function reducer(state: State, action: Action): State {
   if (action.type === "START") {
@@ -33,7 +33,7 @@ function reducer(state: State, action: Action): State {
   return state;
 }
 
-function useSaveReview(): [State, (body: Body) => Promise<void>] {
+function useSaveReview(): SaveReviewTuple {
   const [state, dispatch] = useReducer(reducer, {
     isLoading: undefined,
     err: undefined,

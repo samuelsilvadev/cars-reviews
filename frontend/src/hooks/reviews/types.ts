@@ -20,3 +20,5 @@ export type Action = {
         statusCode: number;
       };
 };
+
+export type SaveReviewTuple = [State, (body: Body) => Promise<void>];
