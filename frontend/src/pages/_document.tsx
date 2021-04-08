@@ -1,22 +1,7 @@
-import Document, {
-  Html,
-  Head,
-  Main,
-  NextScript,
-  DocumentContext,
-  DocumentInitialProps,
-} from "next/document";
+import Document, { Html, Head, Main, NextScript } from "next/document";
 import { ServerStyleSheets } from "@material-ui/styles";
 
 class CustomDocument extends Document {
-  static async getInitialProps(
-    context: DocumentContext
-  ): Promise<DocumentInitialProps> {
-    const initialProps = await Document.getInitialProps(context);
-
-    return initialProps;
-  }
-
   render(): JSX.Element {
     return (
       <Html>
