@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import Link from "next/link";
 import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
@@ -9,6 +9,7 @@ import { useRouter } from "next/router";
 import type { GetServerSideProps } from "next";
 
 import ReviewsList from "components/reviews-list/ReviewsList";
+import BackToTop from "components/back-to-top/BackToTop";
 
 import { END_POINTS } from "constants/api";
 import buildBffUrl from "utils/buildBffUrl";
@@ -80,6 +81,7 @@ function Car({ car }: Props): JSX.Element {
 
   const router = useRouter();
   const styles = useStyles();
+  const headerRef = useRef<HTMLElement | null>(null);
   const createdAtDate = new Date(createdAt);
 
   const handleOnCreateAReview = () => {
@@ -88,7 +90,7 @@ function Car({ car }: Props): JSX.Element {
 
   return (
     <Container fixed>
-      <header className={styles.header}>
+      <header ref={headerRef} className={styles.header}>
         <Link href="/">
           <a className={styles.backLink}>back</a>
         </Link>
@@ -137,6 +139,7 @@ function Car({ car }: Props): JSX.Element {
         </div>
       </header>
       <ReviewsList reviews={reviews} />
+      <BackToTop elementToWatch={headerRef} />
     </Container>
   );
 }
