@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import Link from "next/link";
 import Input from "@material-ui/core/Input";
 import InputLabel from "@material-ui/core/InputLabel";
 import Button from "@material-ui/core/Button";
@@ -61,6 +62,16 @@ const useStyles = makeStyles((theme) =>
     },
     alert: {
       marginBottom: theme.spacing(2),
+    },
+    formFooter: {
+      display: "flex",
+      justifyContent: "flex-end",
+      alignItems: "center",
+    },
+    cancelLink: {
+      textTransform: "uppercase",
+      textDecoration: "none",
+      marginRight: "10px",
     },
   })
 );
@@ -173,15 +184,20 @@ function CreateReview(): JSX.Element {
             </Typography>
           )}
         </div>
-        <Button
-          type="submit"
-          variant="outlined"
-          color="primary"
-          className={styles.button}
-          disabled={state.isLoading}
-        >
-          Save
-        </Button>
+        <div className={styles.formFooter}>
+          <Link href={`/car/${router.query.slug}`}>
+            <a className={styles.cancelLink}>Cancel</a>
+          </Link>
+          <Button
+            type="submit"
+            variant="outlined"
+            color="primary"
+            className={styles.button}
+            disabled={state.isLoading}
+          >
+            Save
+          </Button>
+        </div>
       </form>
     </article>
   );
