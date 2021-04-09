@@ -13,13 +13,16 @@ const useStyles = makeStyles((theme) =>
       display: "flex",
       flexDirection: "column",
       backgroundColor: theme.palette.common.white,
-      paddingBlock: theme.spacing(4),
-      paddingInline: theme.spacing(2),
+      padding: `${theme.spacing(4)}px ${theme.spacing(2)}px`,
       borderRadius: "4px",
       boxShadow: `0 5px 15px ${theme.palette.grey[200]}`,
       [theme.breakpoints.up("sm")]: {
         flexDirection: "row",
       },
+      '@supports (padding-block: 1px) and (padding-inline: 1px)': {
+        paddingBlock: theme.spacing(4),
+        paddingInline: theme.spacing(2),
+      }
     },
     imagePlaceholder: {
       display: "flex",
