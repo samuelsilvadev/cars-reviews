@@ -1,5 +1,5 @@
 {
-  "name": "with-typescript",
+  "name": "cars-review-frontend",
   "version": "1.0.0",
   "scripts": {
     "develop": "next",
