@@ -95,9 +95,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Car"
-        ],
+        "tags": ["Car"],
         "parameters": [
           {
             "name": "_limit",
@@ -283,9 +281,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Car"
-        ],
+        "tags": ["Car"],
         "requestBody": {
           "description": "",
           "required": true,
@@ -350,9 +346,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Car"
-        ],
+        "tags": ["Car"],
         "parameters": []
       }
     },
@@ -403,9 +397,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Car"
-        ],
+        "tags": ["Car"],
         "parameters": [
           {
             "name": "id",
@@ -465,9 +457,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Car"
-        ],
+        "tags": ["Car"],
         "requestBody": {
           "description": "",
           "required": true,
@@ -539,9 +529,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Car"
-        ],
+        "tags": ["Car"],
         "parameters": [
           {
             "name": "id",
@@ -606,9 +594,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Review"
-        ],
+        "tags": ["Review"],
         "parameters": [
           {
             "name": "_limit",
@@ -794,9 +780,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Review"
-        ],
+        "tags": ["Review"],
         "requestBody": {
           "description": "",
           "required": true,
@@ -861,9 +845,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Review"
-        ],
+        "tags": ["Review"],
         "parameters": []
       }
     },
@@ -914,9 +896,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Review"
-        ],
+        "tags": ["Review"],
         "parameters": [
           {
             "name": "id",
@@ -976,9 +956,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Review"
-        ],
+        "tags": ["Review"],
         "requestBody": {
           "description": "",
           "required": true,
@@ -1050,9 +1028,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Review"
-        ],
+        "tags": ["Review"],
         "parameters": [
           {
             "name": "id",
@@ -1118,9 +1094,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Email - Email"
-        ],
+        "tags": ["Email - Email"],
         "requestBody": {
           "description": "",
           "required": true,
@@ -1189,9 +1163,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Upload - File"
-        ],
+        "tags": ["Upload - File"],
         "requestBody": {
           "description": "",
           "required": true,
@@ -1260,9 +1232,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Upload - File"
-        ],
+        "tags": ["Upload - File"],
         "parameters": []
       }
     },
@@ -1317,9 +1287,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Upload - File"
-        ],
+        "tags": ["Upload - File"],
         "parameters": []
       }
     },
@@ -1374,9 +1342,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Upload - File"
-        ],
+        "tags": ["Upload - File"],
         "parameters": [
           {
             "name": "id",
@@ -1440,9 +1406,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Upload - File"
-        ],
+        "tags": ["Upload - File"],
         "parameters": [
           {
             "name": "id",
@@ -1508,9 +1472,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "Upload - File"
-        ],
+        "tags": ["Upload - File"],
         "parameters": [
           {
             "name": "id",
@@ -1572,9 +1534,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "UsersPermissions - Role"
-        ],
+        "tags": ["UsersPermissions - Role"],
         "parameters": [
           {
             "name": "id",
@@ -1639,9 +1599,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "UsersPermissions - Role"
-        ],
+        "tags": ["UsersPermissions - Role"],
         "parameters": [
           {
             "name": "_limit",
@@ -1827,9 +1785,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "UsersPermissions - Role"
-        ],
+        "tags": ["UsersPermissions - Role"],
         "requestBody": {
           "description": "",
           "required": true,
@@ -1890,9 +1846,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "UsersPermissions - Role"
-        ],
+        "tags": ["UsersPermissions - Role"],
         "parameters": [
           {
             "name": "role",
@@ -1967,9 +1921,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "UsersPermissions - Role"
-        ],
+        "tags": ["UsersPermissions - Role"],
         "parameters": [
           {
             "name": "role",
@@ -2034,9 +1986,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "UsersPermissions - User"
-        ],
+        "tags": ["UsersPermissions - User"],
         "parameters": [
           {
             "name": "id",
@@ -2238,9 +2188,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "UsersPermissions - User"
-        ],
+        "tags": ["UsersPermissions - User"],
         "parameters": []
       }
     },
@@ -2295,9 +2243,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "UsersPermissions - User"
-        ],
+        "tags": ["UsersPermissions - User"],
         "requestBody": {
           "description": "",
           "required": true,
@@ -2362,9 +2308,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "UsersPermissions - User"
-        ],
+        "tags": ["UsersPermissions - User"],
         "requestBody": {
           "description": "",
           "required": true,
@@ -2429,9 +2373,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "UsersPermissions - User"
-        ],
+        "tags": ["UsersPermissions - User"],
         "parameters": [
           {
             "name": "provider",
@@ -2497,9 +2439,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "UsersPermissions - User"
-        ],
+        "tags": ["UsersPermissions - User"],
         "requestBody": {
           "description": "",
           "required": true,
@@ -2568,9 +2508,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "UsersPermissions - User"
-        ],
+        "tags": ["UsersPermissions - User"],
         "requestBody": {
           "description": "",
           "required": true,
@@ -2639,9 +2577,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "UsersPermissions - User"
-        ],
+        "tags": ["UsersPermissions - User"],
         "parameters": []
       }
     },
@@ -2696,9 +2632,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "UsersPermissions - User"
-        ],
+        "tags": ["UsersPermissions - User"],
         "requestBody": {
           "description": "",
           "required": true,
@@ -2766,9 +2700,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "UsersPermissions - User"
-        ],
+        "tags": ["UsersPermissions - User"],
         "parameters": [
           {
             "name": "_limit",
@@ -2956,9 +2888,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "UsersPermissions - User"
-        ],
+        "tags": ["UsersPermissions - User"],
         "parameters": []
       }
     },
@@ -3009,9 +2939,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "UsersPermissions - User"
-        ],
+        "tags": ["UsersPermissions - User"],
         "parameters": [
           {
             "name": "id",
@@ -3071,9 +2999,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "UsersPermissions - User"
-        ],
+        "tags": ["UsersPermissions - User"],
         "parameters": [
           {
             "name": "id",
@@ -3148,9 +3074,7 @@
           }
         },
         "summary": "",
-        "tags": [
-          "UsersPermissions - User"
-        ],
+        "tags": ["UsersPermissions - User"],
         "parameters": [
           {
             "name": "id",
@@ -3169,9 +3093,7 @@
   "components": {
     "schemas": {
       "Car": {
-        "required": [
-          "id"
-        ],
+        "required": ["id"],
         "properties": {
           "id": {
             "type": "string"
@@ -3258,11 +3180,7 @@
           "reviews": {
             "type": "array",
             "items": {
-              "required": [
-                "id",
-                "description",
-                "author"
-              ],
+              "required": ["id", "description", "author"],
               "properties": {
                 "id": {
                   "type": "string"
@@ -3324,11 +3242,7 @@
         }
       },
       "Review": {
-        "required": [
-          "id",
-          "description",
-          "author"
-        ],
+        "required": ["id", "description", "author"],
         "properties": {
           "id": {
             "type": "string"
@@ -3337,9 +3251,7 @@
             "type": "string"
           },
           "car": {
-            "required": [
-              "id"
-            ],
+            "required": ["id"],
             "properties": {
               "id": {
                 "type": "string"
@@ -3386,10 +3298,7 @@
         }
       },
       "NewReview": {
-        "required": [
-          "description",
-          "author"
-        ],
+        "required": ["description", "author"],
         "properties": {
           "description": {
             "type": "string"
@@ -3413,10 +3322,7 @@
         }
       },
       "UsersPermissionsRole": {
-        "required": [
-          "id",
-          "name"
-        ],
+        "required": ["id", "name"],
         "properties": {
           "id": {
             "type": "string"
@@ -3434,13 +3340,7 @@
           "permissions": {
             "type": "array",
             "items": {
-              "required": [
-                "id",
-                "type",
-                "controller",
-                "action",
-                "enabled"
-              ],
+              "required": ["id", "type", "controller", "action", "enabled"],
               "properties": {
                 "id": {
                   "type": "string"
@@ -3475,11 +3375,7 @@
           "users": {
             "type": "array",
             "items": {
-              "required": [
-                "id",
-                "username",
-                "email"
-              ],
+              "required": ["id", "username", "email"],
               "properties": {
                 "id": {
                   "type": "string"
@@ -3523,9 +3419,7 @@
         }
       },
       "NewUsersPermissionsRole": {
-        "required": [
-          "name"
-        ],
+        "required": ["name"],
         "properties": {
           "name": {
             "type": "string",
@@ -3558,11 +3452,7 @@
         }
       },
       "UsersPermissionsUser": {
-        "required": [
-          "id",
-          "username",
-          "email"
-        ],
+        "required": ["id", "username", "email"],
         "properties": {
           "id": {
             "type": "string"
@@ -3587,10 +3477,7 @@
             "default": false
           },
           "role": {
-            "required": [
-              "id",
-              "name"
-            ],
+            "required": ["id", "name"],
             "properties": {
               "id": {
                 "type": "string"
@@ -3627,10 +3514,7 @@
         }
       },
       "NewUsersPermissionsUser": {
-        "required": [
-          "username",
-          "email"
-        ],
+        "required": ["username", "email"],
         "properties": {
           "username": {
             "type": "string",
@@ -3674,10 +3558,7 @@
         }
       },
       "Error": {
-        "required": [
-          "code",
-          "message"
-        ],
+        "required": ["code", "message"],
         "properties": {
           "code": {
             "type": "integer",

@@ -5,7 +5,8 @@
     "develop": "strapi develop",
     "start": "strapi start",
     "build": "strapi build",
-    "strapi": "strapi"
+    "strapi": "strapi",
+    "format": "prettier --write . --loglevel=error"
   },
   "devDependencies": {
     "prettier": "^2.2.1"

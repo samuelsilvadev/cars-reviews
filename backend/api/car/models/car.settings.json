@@ -22,11 +22,7 @@
     "photos": {
       "collection": "file",
       "via": "related",
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos"
-      ],
+      "allowedTypes": ["images", "files", "videos"],
       "plugin": "upload",
       "required": false
     },
