@@ -15,6 +15,7 @@ import { END_POINTS } from "constants/api";
 import buildBffUrl from "utils/buildBffUrl";
 
 import type { Car as CarType } from "types/Car";
+import type { Photo, PhotoFormat } from "types/Photo";
 
 type Props = {
   car: CarType;
@@ -70,6 +71,18 @@ const useStyles = makeStyles((theme) =>
   })
 );
 
+function selectAvailableSrc(photo: Photo) {
+  return photo.formats.medium?.url ?? photo.formats.small?.url;
+}
+
+function buildSrcSetItem(photo: PhotoFormat, size: string) {
+  if (photo?.url) {
+    return `${process.env.NEXT_PUBLIC_ASSETS_URL}${photo.url} ${size}`;
+  }
+
+  return "";
+}
+
 function Car({ car }: Props): JSX.Element {
   const {
     photos: [primaryPhoto] = [],
@@ -98,12 +111,14 @@ function Car({ car }: Props): JSX.Element {
           <img
             className={styles.hero}
             srcSet={`
-              ${process.env.NEXT_PUBLIC_ASSETS_URL}${primaryPhoto.formats.thumbnail.url} 375w,
-              ${process.env.NEXT_PUBLIC_ASSETS_URL}${primaryPhoto.formats.small.url} 768w,
-              ${process.env.NEXT_PUBLIC_ASSETS_URL}${primaryPhoto.formats.medium.url} 1200w,
+              ${buildSrcSetItem(primaryPhoto.formats.thumbnail, "375w")},
+              ${buildSrcSetItem(primaryPhoto.formats.small, "768w")},
+              ${buildSrcSetItem(primaryPhoto.formats.medium, "1200w")}
             `}
             sizes="(max-width: 768px) 375px, (min-width: 769px) and (max-width: 1024px) 768px, 1024px"
-            src={`${process.env.NEXT_PUBLIC_ASSETS_URL}${primaryPhoto.formats.medium.url}`}
+            src={`${process.env.NEXT_PUBLIC_ASSETS_URL}${selectAvailableSrc(
+              primaryPhoto
+            )}`}
             alt={primaryPhoto.alternativeText}
           />
         ) : (

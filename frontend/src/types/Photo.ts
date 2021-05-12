@@ -1,4 +1,4 @@
-type PhotoFormat = {
+export type PhotoFormat = {
   name: string;
   hash: string;
   ext: string;
