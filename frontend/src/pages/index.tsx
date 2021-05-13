@@ -105,12 +105,26 @@ const IndexPage = ({ cars = [] }: Props): JSX.Element => {
 };
 
 export const getServerSideProps: GetServerSideProps = async () => {
-  const response = await fetch(buildBffUrl(END_POINTS.CARS));
-  const data = await response.json();
+  try {
+    const response = await fetch(buildBffUrl(END_POINTS.CARS));
+    const data = await response.json();
+
+    if (response.status >= 400) {
+      throw data;
+    }
+
+    return {
+      props: {
+        cars: data,
+      },
+    };
+  } catch (error) {
+    console.error(error);
+  }
 
   return {
     props: {
-      cars: data,
+      cars: [],
     },
   };
 };
