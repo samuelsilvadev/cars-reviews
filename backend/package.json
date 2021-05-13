@@ -21,6 +21,7 @@
     "strapi-plugin-email": "3.4.6",
     "strapi-plugin-upload": "3.4.6",
     "strapi-plugin-users-permissions": "3.4.6",
+    "strapi-provider-upload-cloudinary": "^3.6.2",
     "strapi-utils": "3.4.6"
   },
   "strapi": {
