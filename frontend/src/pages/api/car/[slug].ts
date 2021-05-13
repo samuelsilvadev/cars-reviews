@@ -1,5 +1,5 @@
 import nc from "next-connect";
-import { NextApiRequest, NextApiResponse } from "next";
+import type { NextApiRequest, NextApiResponse } from "next";
 
 const handler = nc<NextApiRequest, NextApiResponse>();
 

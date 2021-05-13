@@ -23,7 +23,8 @@
       "constants/*": ["./src/constants/*"],
       "types/*": ["./src/types/*"],
       "components/*": ["./src/components/*"],
-      "hooks/*": ["./src/hooks/*"]
+      "hooks/*": ["./src/hooks/*"],
+      "api/*": ["./src/pages/api/*"]
     }
   },
   "exclude": ["node_modules"],
