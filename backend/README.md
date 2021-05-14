@@ -20,6 +20,7 @@
 - [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
   - [Installation](#installation)
+- [Run a production build](#run-a-production-build)
 
 ## About The Project
 
@@ -65,7 +66,7 @@ cd backend
 yarn
 ```
 
-4. Setup a mongodb database. To facilitate the process you can use `docker` to do the job
+4. Setup a mongodb database. To facilitate the process you can use `docker` to do the job. Or you can use either a local or remote instance of mongodb.
 
 ```sh
 docker run -d -p 27017-27019:27017-27019 -v ~/mongo/databases:/data/db --name mongodb mongo
@@ -75,4 +76,12 @@ docker run -d -p 27017-27019:27017-27019 -v ~/mongo/databases:/data/db --name mo
 
 ```sh
 yarn develop
+```
+
+## Run a production build
+
+To ease the setup of production build and the database, It was created a docker config tied with docker compose. To run it locally you can type:
+
+```sh
+docker compose up --build
 ```
