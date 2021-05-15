@@ -7,6 +7,12 @@
     <a href="https://github.com/samuelsilvadev/cars-reviews/tree/master/backend#table-of-contents">Backend docs</a>
   </p>
 </div>
+<br>
+
+With the growing of the development I sought for tools I could use freely to deploy every part of the application. Since it doesn't demand a high infrastructure because it's a project just to learn and explore new tech, I could use anything and looking to the needs for this project that were a node environment for frontend, and also one for backend, a database repository and a image bucket to save the uploads made on strapi I choose the following services:
+
+<img src="./docs/images/services.jpeg" alt="services used to deploy the applications" />
+
 
 ## Contributing
 

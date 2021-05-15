@@ -1,0 +1,23 @@
+Id,Name,Shape Library,Page ID,Contained By,Group,Line Source,Line Destination,Source Arrow,Destination Arrow,Text Area 1
+1,Page,,,,,,,,,Flowchart
+2,Process,Flowchart Shapes,1,,,,,,,frontend
+3,Process,Flowchart Shapes,1,,,,,,,vercel
+4,Process,Flowchart Shapes,1,,,,,,,backend
+5,Process,Flowchart Shapes,1,,,,,,,heroku
+6,Process,Flowchart Shapes,1,,,,,,,database
+7,Process,Flowchart Shapes,1,,,,,,,Atlas
+8,Process,Flowchart Shapes,1,,,,,,,assets
+9,Process,Flowchart Shapes,1,,,,,,,cloudinary
+10,User Image,User Images,1,,,,,,,
+11,User Image,User Images,1,,,,,,,
+12,User Image,User Images,1,,,,,,,
+13,User Image,User Images,1,,,,,,,
+14,User Image,User Images,1,,,,,,,
+15,User Image,User Images,1,,,,,,,
+16,User Image,User Images,1,,,,,,,
+17,Line,,1,,,2,3,None,Arrow,
+18,Line,,1,,,6,7,None,Arrow,
+19,Line,,1,,,4,7,None,Arrow,
+20,Line,,1,,,4,9,None,Arrow,
+21,Line,,1,,,8,9,None,Arrow,
+22,Line,,1,,,2,9,None,Arrow,
