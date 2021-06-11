@@ -5,11 +5,12 @@ import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 import { createStyles, makeStyles } from "@material-ui/core";
 import { useRouter } from "next/router";
+import BackToTop from "@small-components/back-to-top";
 
 import type { GetServerSideProps } from "next";
 
+import ArrowUpwards from "components/icons/ArrowUpwards";
 import ReviewsList from "components/reviews-list/ReviewsList";
-import BackToTop from "components/back-to-top/BackToTop";
 
 import { END_POINTS } from "constants/api";
 import buildBffUrl from "utils/buildBffUrl";
@@ -67,6 +68,13 @@ const useStyles = makeStyles((theme) =>
     },
     subtitle: {
       marginBottom: "20px",
+    },
+    backToTop: {
+      position: "fixed",
+      bottom: "50px",
+      right: "60px",
+      width: "70px",
+      height: "50px",
     },
   })
 );
@@ -154,7 +162,13 @@ function Car({ car }: Props): JSX.Element {
         </div>
       </header>
       <ReviewsList reviews={reviews} />
-      <BackToTop elementToWatch={headerRef} />
+      <BackToTop
+        alwaysVisible={false}
+        className={styles.backToTop}
+        showAfterRef={headerRef}
+      >
+        <ArrowUpwards />
+      </BackToTop>
     </Container>
   );
 }

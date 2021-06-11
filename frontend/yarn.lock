@@ -324,6 +324,11 @@
   resolved "https://registry.yarnpkg.com/@opentelemetry/context-base/-/context-base-0.14.0.tgz#c67fc20a4d891447ca1a855d7d70fa79a3533001"
   integrity sha512-sDOAZcYwynHFTbLo6n8kIbLiVF3a3BLkrmehJUyEbT9F+Smbi47kLGS2gG2g0fjBLR/Lr1InPD7kXL7FaTqEkw==
 
+"@small-components/back-to-top@0.4.0":
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/@small-components/back-to-top/-/back-to-top-0.4.0.tgz#205da10f865d88e0452506be0c91865d8ada9c35"
+  integrity sha512-H7hNf+GHhFShpvmU+RWKjMY/ZPVpvXt7Kc5tOCifMRRKqxP6+YivMKs5llG9z39g1P/hEIAdzaEkNMy/Mcssjw==
+
 "@types/cors@^2.8.10":
   version "2.8.10"
   resolved "https://registry.yarnpkg.com/@types/cors/-/cors-2.8.10.tgz#61cc8469849e5bcdd0c7044122265c39cec10cf4"

@@ -3,6 +3,8 @@ import CssBaseline from "@material-ui/core/CssBaseline";
 
 import type { AppProps } from "next/app";
 
+import "@small-components/back-to-top/dist/main.css";
+
 function App({ Component, pageProps }: AppProps): JSX.Element {
   useEffect(() => {
     const serverSideStyles = document.getElementById("jss-server-side");
